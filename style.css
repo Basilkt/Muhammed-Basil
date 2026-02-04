@@ -1,82 +1,105 @@
-/* --- 1. Global & Typography --- */
+/* --- 1. Global --- */
 body {
     margin: 0; padding: 0;
-    font-family: 'Outfit', sans-serif; /* New Premium Font */
-    background-color: #050505; 
-    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    background-color: #0a0a0a; color: #ffffff;
     overflow-x: hidden;
 }
 
-/* --- 2. Ambient Background Effect --- */
+/* --- 2. Background Blobs --- */
 .bg-blob {
-    position: fixed;
-    width: 600px; height: 600px;
-    background: radial-gradient(#1e3a8a, transparent 70%);
-    opacity: 0.2; border-radius: 50%; z-index: -1;
+    position: fixed; width: 600px; height: 600px;
+    background: radial-gradient(#2563eb, transparent 70%);
+    opacity: 0.15; border-radius: 50%; z-index: -1;
     filter: blur(80px); animation: float 20s infinite alternate;
 }
-.blob-1 { top: -200px; left: -200px; background: radial-gradient(#2563eb, transparent 70%); }
-.blob-2 { bottom: -200px; right: -200px; background: radial-gradient(#7c3aed, transparent 70%); animation-delay: -10s; }
-
+.blob-1 { top: -200px; left: -200px; }
+.blob-2 { bottom: -200px; right: -200px; background: radial-gradient(#db2777, transparent 70%); animation-delay: -10s; }
 @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(50px, 50px); } }
 
-/* --- 3. Hero Section --- */
+/* --- 3. Hero Section (SofiDev Style) --- */
 .hero-container {
     min-height: 100vh; display: flex; flex-direction: column;
     justify-content: center; align-items: center; text-align: center;
     padding: 20px;
 }
 
-.greeting {
-    font-size: 4.5rem; /* Larger Text */
-    font-weight: 800; letter-spacing: -2px; margin-bottom: 10px;
-    line-height: 1.1;
+/* Status Badge */
+.status-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px; border-radius: 50px;
+    font-size: 0.9rem; font-weight: 500; color: #a1a1aa;
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.status-dot {
+    width: 8px; height: 8px; background-color: #4ade80; /* Green */
+    border-radius: 50%; box-shadow: 0 0 10px #4ade80;
 }
 
-.name-highlight {
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.3)); /* Glow Effect */
+/* Profile Photo Area */
+.profile-frame {
+    width: 120px; height: 120px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 25px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
+.profile-icon { font-size: 3rem; color: #a1a1aa; } /* Placeholder Icon */
+.profile-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+/* Typography */
+.greeting {
+    font-size: 3.5rem; font-weight: 800; margin: 0 0 10px 0;
+    letter-spacing: -1px;
+}
+.name-highlight {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* Terminal Lines */
+.terminal-box { margin-bottom: 20px; }
+.terminal-line {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem; color: #e4e4e7; margin: 5px 0;
+}
+.prompt { color: #db2777; font-weight: bold; margin-right: 8px; }
 
 .subtitle {
-    font-size: 1.4rem; color: #94a3b8; margin-bottom: 40px; font-weight: 300;
+    font-size: 1.1rem; color: #a1a1aa; max-width: 500px;
+    line-height: 1.6; margin-bottom: 35px;
 }
+.tech-highlight { color: #fff; font-weight: 600; }
 
-.tech-stack { color: #e2e8f0; font-weight: 500; letter-spacing: 1px; }
-
-/* --- 4. Buttons & Icons --- */
+/* Buttons */
+.action-buttons { display: flex; gap: 15px; justify-content: center; margin-bottom: 40px; }
 .main-button {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    color: white; padding: 18px 40px; font-size: 1.1rem;
-    text-decoration: none; border-radius: 50px; font-weight: 600;
-    box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.5); /* Glowing Shadow */
-    transition: all 0.3s ease; display: inline-block;
+    padding: 12px 25px; border-radius: 8px; font-weight: 600;
+    text-decoration: none; transition: 0.3s; display: flex; align-items: center; gap: 8px;
 }
-.main-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.7);
+.main-button.primary {
+    background: #ffffff; color: #000000;
 }
+.main-button.secondary {
+    background: rgba(255, 255, 255, 0.1); color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.main-button:hover { transform: translateY(-2px); opacity: 0.9; }
 
-.social-icons { display: flex; gap: 20px; justify-content: center; margin-bottom: 40px; }
-.icon-box {
-    width: 55px; height: 55px; display: flex; align-items: center; justify-content: center;
-    border-radius: 50%; font-size: 1.5rem; color: #94a3b8;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease; text-decoration: none;
-}
-.icon-box:hover {
-    background: #3b82f6; color: white; transform: translateY(-5px) rotate(10deg);
-    border-color: #3b82f6;
-}
+/* Social Mini Row */
+.social-mini-row { display: flex; gap: 20px; }
+.social-mini-row a { color: #71717a; font-size: 1.5rem; transition: 0.3s; }
+.social-mini-row a:hover { color: #ffffff; transform: scale(1.1); }
 
-/* --- 5. Video & Gallery (Glassmorphism) --- */
-.video-section, .gallery-section { padding: 100px 20px; text-align: center; }
-.section-title { font-size: 2.5rem; margin-bottom: 60px; font-weight: 700; }
+/* --- 4. Other Sections --- */
+.video-section, .gallery-section { padding: 80px 20px; text-align: center; }
+.section-title { font-size: 2rem; margin-bottom: 40px; }
 
 .video-wrapper {
     max-width: 900px; margin: 0 auto;
-    padding: 10px; background: rgba(255,255,255,0.05); /* Glass border */
+    padding: 10px; background: rgba(255,255,255,0.05);
     border-radius: 20px; backdrop-filter: blur(10px);
 }
 .video-container {
@@ -86,33 +109,21 @@ body {
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 .gallery-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px; max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; max-width: 1000px; margin: 0 auto;
 }
-
-/* The Glass Card Style */
 .project-card {
-    background: rgba(20, 20, 25, 0.6); /* Semi-transparent dark */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px; overflow: hidden;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.03); border-radius: 15px;
+    overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
 }
-.project-card:hover {
-    transform: translateY(-15px);
-    border-color: #3b82f6;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-.card-image { height: 240px; background-size: cover; background-position: center; }
-.card-info { padding: 25px; text-align: left; }
-.card-info h3 { margin: 0 0 8px 0; font-size: 1.4rem; color: #fff; }
-.card-info p { margin: 0; color: #94a3b8; font-size: 0.95rem; }
+.project-card:hover { transform: translateY(-10px); border-color: #60a5fa; }
+.card-image { height: 200px; background-size: cover; background-position: center; }
+.card-info { padding: 20px; text-align: left; }
+.card-info h3 { margin: 0 0 5px 0; font-size: 1.2rem; }
+.card-info p { margin: 0; color: #a1a1aa; font-size: 0.9rem; }
 
-/* --- 6. Animations --- */
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* Splash Screen (Kept the same but matched new font) */
+/* --- 5. Splash Screen --- */
 .splash-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
     background-color: #000; display: flex; justify-content: center; align-items: center;
@@ -126,3 +137,5 @@ body {
 }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeOutScreen { to { opacity: 0; visibility: hidden; } }
+.fade-in { opacity: 0; transform: translateY(20px); transition: 1s; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
