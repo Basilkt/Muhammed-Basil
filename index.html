@@ -1,128 +1,100 @@
-/* --- 1. Global & Typography --- */
-body {
-    margin: 0; padding: 0;
-    font-family: 'Outfit', sans-serif; /* New Premium Font */
-    background-color: #050505; 
-    color: #ffffff;
-    overflow-x: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhamme Basil KT | VFX Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-/* --- 2. Ambient Background Effect --- */
-.bg-blob {
-    position: fixed;
-    width: 600px; height: 600px;
-    background: radial-gradient(#1e3a8a, transparent 70%);
-    opacity: 0.2; border-radius: 50%; z-index: -1;
-    filter: blur(80px); animation: float 20s infinite alternate;
-}
-.blob-1 { top: -200px; left: -200px; background: radial-gradient(#2563eb, transparent 70%); }
-.blob-2 { bottom: -200px; right: -200px; background: radial-gradient(#7c3aed, transparent 70%); animation-delay: -10s; }
+    <div class="splash-screen">
+        <h1 class="splash-name">Muhamme Basil KT</h1>
+    </div>
 
-@keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(50px, 50px); } }
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
 
-/* --- 3. Hero Section --- */
-.hero-container {
-    min-height: 100vh; display: flex; flex-direction: column;
-    justify-content: center; align-items: center; text-align: center;
-    padding: 20px;
-}
+    <section class="hero-container fade-in">
+        <div class="hero-content">
+            <h1 class="greeting">Hi, I'm <span class="name-highlight">Muhamme Basil KT</span></h1>
+            
+            <p class="subtitle">
+                VFX Artist & Compositor <br>
+                <span class="tech-stack">Nuke | Maya | Houdini | After Effects</span>
+            </p>
 
-.greeting {
-    font-size: 4.5rem; /* Larger Text */
-    font-weight: 800; letter-spacing: -2px; margin-bottom: 10px;
-    line-height: 1.1;
-}
+            <div class="social-icons">
+                <a href="https://github.com/basilkt" target="_blank" class="icon-box"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="icon-box"><i class="fab fa-linkedin"></i></a>
+                <a href="https://artstation.com/yourusername" target="_blank" class="icon-box"><i class="fab fa-artstation"></i></a>
+                <a href="mailto:youremail@gmail.com" class="icon-box"><i class="fas fa-envelope"></i></a>
+            </div>
 
-.name-highlight {
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.3)); /* Glow Effect */
-}
+            <br>
+            <a href="#work" class="main-button">Watch My Reel <i class="fas fa-play" style="font-size: 0.8rem; margin-left: 8px;"></i></a>
+        </div>
+    </section>
 
-.subtitle {
-    font-size: 1.4rem; color: #94a3b8; margin-bottom: 40px; font-weight: 300;
-}
+    <section id="work" class="video-section fade-in">
+        <h2 class="section-title">Showreel 2024</h2>
+        <div class="video-wrapper">
+            <div class="video-container">
+                <iframe 
+                    src="https://player.vimeo.com/video/899002332?h=d5d5d5d5d5&color=6886e0&title=0&byline=0&portrait=0" 
+                    width="640" 
+                    height="360" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
 
-.tech-stack { color: #e2e8f0; font-weight: 500; letter-spacing: 1px; }
+    <section class="gallery-section fade-in">
+        <h2 class="section-title">Selected Shots</h2>
+        <div class="gallery-grid">
+            <div class="project-card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1535016120720-40c6874c3b1c');"></div>
+                <div class="card-info">
+                    <h3>Chrome Ball Integration</h3>
+                    <p>Nuke | Maya</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe');"></div>
+                <div class="card-info">
+                    <h3>Green Screen Keying</h3>
+                    <p>Nuke | Keylight</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb');"></div>
+                <div class="card-info">
+                    <h3>Matte Painting</h3>
+                    <p>Photoshop | Nuke</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* --- 4. Buttons & Icons --- */
-.main-button {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    color: white; padding: 18px 40px; font-size: 1.1rem;
-    text-decoration: none; border-radius: 50px; font-weight: 600;
-    box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.5); /* Glowing Shadow */
-    transition: all 0.3s ease; display: inline-block;
-}
-.main-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.7);
-}
+    <footer style="text-align: center; padding: 40px; color: #555; font-size: 0.8rem;">
+        <p>&copy; 2024 Muhamme Basil KT. All rights reserved.</p>
+    </footer>
 
-.social-icons { display: flex; gap: 20px; justify-content: center; margin-bottom: 40px; }
-.icon-box {
-    width: 55px; height: 55px; display: flex; align-items: center; justify-content: center;
-    border-radius: 50%; font-size: 1.5rem; color: #94a3b8;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease; text-decoration: none;
-}
-.icon-box:hover {
-    background: #3b82f6; color: white; transform: translateY(-5px) rotate(10deg);
-    border-color: #3b82f6;
-}
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+        document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
+    </script>
 
-/* --- 5. Video & Gallery (Glassmorphism) --- */
-.video-section, .gallery-section { padding: 100px 20px; text-align: center; }
-.section-title { font-size: 2.5rem; margin-bottom: 60px; font-weight: 700; }
-
-.video-wrapper {
-    max-width: 900px; margin: 0 auto;
-    padding: 10px; background: rgba(255,255,255,0.05); /* Glass border */
-    border-radius: 20px; backdrop-filter: blur(10px);
-}
-.video-container {
-    position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-    border-radius: 15px; background: #000;
-}
-.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-.gallery-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px; max-width: 1200px; margin: 0 auto;
-}
-
-/* The Glass Card Style */
-.project-card {
-    background: rgba(20, 20, 25, 0.6); /* Semi-transparent dark */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px; overflow: hidden;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(10px);
-}
-.project-card:hover {
-    transform: translateY(-15px);
-    border-color: #3b82f6;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-.card-image { height: 240px; background-size: cover; background-position: center; }
-.card-info { padding: 25px; text-align: left; }
-.card-info h3 { margin: 0 0 8px 0; font-size: 1.4rem; color: #fff; }
-.card-info p { margin: 0; color: #94a3b8; font-size: 0.95rem; }
-
-/* --- 6. Animations --- */
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* Splash Screen (Kept the same but matched new font) */
-.splash-screen {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-    background-color: #000; display: flex; justify-content: center; align-items: center;
-    z-index: 9999; animation: fadeOutScreen 1s ease-in-out 2.5s forwards;
-}
-.splash-name {
-    font-size: 4rem; font-weight: 800; color: white;
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    opacity: 0; animation: fadeInUp 1.5s ease-in-out forwards;
-}
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeOutScreen { to { opacity: 0; visibility: hidden; } }
+</body>
+</html>
