@@ -19,22 +19,42 @@
 
     <section class="hero-container fade-in">
         <div class="hero-content">
-            <h1 class="greeting">Hi, I'm <span class="name-highlight">Muhamme Basil KT</span></h1>
             
-            <p class="subtitle">
-                VFX Artist & Compositor <br>
-                <span class="tech-stack">Nuke | Maya | Houdini | After Effects</span>
-            </p>
-
-            <div class="social-icons">
-                <a href="https://github.com/basilkt" target="_blank" class="icon-box"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" class="icon-box"><i class="fab fa-linkedin"></i></a>
-                <a href="https://artstation.com/yourusername" target="_blank" class="icon-box"><i class="fab fa-artstation"></i></a>
-                <a href="mailto:youremail@gmail.com" class="icon-box"><i class="fas fa-envelope"></i></a>
+            <div class="status-badge">
+                <span class="status-dot"></span> Available for work
             </div>
 
-            <br>
-            <a href="#work" class="main-button">Watch My Reel <i class="fas fa-play" style="font-size: 0.8rem; margin-left: 8px;"></i></a>
+            <div class="profile-frame">
+                <i class="fas fa-user-astronaut profile-icon"></i>
+            </div>
+
+            <h1 class="greeting">Hi! I'm <span class="name-highlight">Muhamme Basil</span></h1>
+            
+            <div class="terminal-box">
+                <p class="terminal-line"><span class="prompt">≥</span> VFX Artist & Compositor</p>
+                <p class="terminal-line"><span class="prompt">≥</span> based in India</p>
+            </div>
+
+            <p class="subtitle">
+                Transforming raw footage into cinematic reality using 
+                <span class="tech-highlight">Nuke</span>, <span class="tech-highlight">Maya</span>, and <span class="tech-highlight">Houdini</span>.
+            </p>
+
+            <div class="action-buttons">
+                <a href="#work" class="main-button primary">
+                    <i class="fas fa-play"></i> Watch Reel
+                </a>
+                <a href="mailto:youremail@gmail.com" class="main-button secondary">
+                    <i class="fas fa-envelope"></i> Contact Me
+                </a>
+            </div>
+
+            <div class="social-mini-row">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://artstation.com" target="_blank"><i class="fab fa-artstation"></i></a>
+            </div>
+
         </div>
     </section>
 
@@ -44,11 +64,7 @@
             <div class="video-container">
                 <iframe 
                     src="https://player.vimeo.com/video/899002332?h=d5d5d5d5d5&color=6886e0&title=0&byline=0&portrait=0" 
-                    width="640" 
-                    height="360" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture" 
-                    allowfullscreen>
+                    width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
                 </iframe>
             </div>
         </div>
@@ -81,10 +97,6 @@
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: #555; font-size: 0.8rem;">
-        <p>&copy; 2024 Muhamme Basil KT. All rights reserved.</p>
-    </footer>
-
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -95,6 +107,5 @@
         });
         document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
     </script>
-
 </body>
 </html>
