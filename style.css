@@ -57,13 +57,14 @@ body {
     display: flex; 
     gap: 15px; 
     margin-bottom: 40px; 
-    flex-wrap: wrap; /* Allows buttons to stack if screen is small */
+    flex-wrap: wrap; 
 }
 
 .main-button {
     padding: 14px 30px; border-radius: 50px; font-weight: 600;
-    text-decoration: none; transition: 0.3s; display: flex; align-items: center; gap: 8px;
-    white-space: nowrap; /* Keeps text on one line */
+    text-decoration: none; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px;
+    white-space: nowrap; 
+    min-width: 50px; /* Ensures icon button isn't too squished */
 }
 .primary { background: white; color: black; }
 .secondary { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.1); }
