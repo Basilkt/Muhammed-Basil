@@ -124,14 +124,14 @@ body {
     animation-delay: 2s; 
 } 
 
-/* 4. Photoshop (Blue) - Bottom Right (NEW) */
+/* 4. Photoshop (Blue) - Bottom Right */
 .bubble-4 { 
     bottom: 10px; right: 20px; 
     border-color: #3b82f6; color: #3b82f6; 
     animation-delay: 3s; 
 } 
 
-/* 5. After Effects (Purple) - Bottom Left (NEW) */
+/* 5. After Effects (Purple) - Bottom Left */
 .bubble-5 { 
     bottom: 20px; left: -10px; 
     border-color: #a855f7; color: #a855f7; 
@@ -182,9 +182,3 @@ body {
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
 .project-card { background: rgba(255,255,255,0.03); border-radius: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
 .card-image { height: 200px; background-size: cover; background-position: center; }
-.card-info { padding: 20px; text-align: left; }
-.fade-in { opacity: 0; transform: translateY(20px); transition: 1s; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-.bg-blob { position: fixed; width: 600px; height: 600px; background: radial-gradient(#2563eb, transparent 70%); opacity: 0.15; border-radius: 50%; z-index: -1; filter: blur(80px); }
-.blob-1 { top: -200px; left: -200px; }
-.blob-2 { bottom: -200px; right: -200px; background: radial-gradient(#db2777, transparent 70%); }
