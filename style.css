@@ -8,9 +8,9 @@ body {
 
 /* --- 2. Navbar --- */
 .top-nav {
-    padding: 20px 50px;
+    padding: 30px 50px;
     position: absolute; top: 0; left: 0; width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; z-index: 10;
 }
 .logo { font-size: 1.5rem; font-weight: 700; color: white; }
 .dot { color: #60a5fa; }
@@ -18,95 +18,147 @@ body {
 /* --- 3. Hero Layout (Split Screen) --- */
 .hero-container {
     min-height: 100vh;
-    display: flex; /* THIS makes them side-by-side */
+    display: flex; 
     align-items: center;
-    justify-content: space-between; /* Pushes text left, image right */
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 50px;
-    gap: 50px;
+    gap: 20px;
 }
 
-/* Left Side: Text */
-.hero-text { flex: 1; text-align: left; /* Forces text to the left */ }
+/* LEFT SIDE: Text Styling */
+.hero-text { flex: 1; text-align: left; z-index: 2; }
 
-/* Right Side: Image */
-.hero-image { flex: 1; display: flex; justify-content: center; }
-
-.image-frame {
-    width: 350px; height: 350px;
-    border-radius: 30px; /* Rounded square like SofiDev */
-    overflow: hidden;
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
-    transform: rotate(3deg); /* Slight stylish tilt */
-    transition: 0.3s;
-}
-.image-frame:hover { transform: rotate(0deg) scale(1.02); }
-.profile-pic { width: 100%; height: 100%; object-fit: cover; }
-
-/* Status Badge (Pill Shape) */
-.status-badge {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 6px 16px; border-radius: 50px;
-    font-size: 0.85rem; font-weight: 500; color: #94a3b8;
-    display: inline-flex; align-items: center; gap: 8px;
-    margin-bottom: 25px; border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.status-dot {
-    width: 6px; height: 6px; background-color: #4ade80;
-    border-radius: 50%; box-shadow: 0 0 8px #4ade80;
-}
-
-/* Typography */
 .greeting {
-    font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px;
+    font-size: 5rem; font-weight: 800; line-height: 1; margin-bottom: 20px;
 }
 .name-highlight {
     background: linear-gradient(to right, #60a5fa, #a78bfa);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
+
 .terminal-box { margin-bottom: 20px; }
 .terminal-line {
-    font-family: 'Courier New', monospace; font-size: 1.1rem;
-    color: #e4e4e7; margin: 5px 0;
+    font-family: 'Courier New', monospace; font-size: 1.3rem;
+    color: #4ade80; /* Green text like reference */
+    margin: 5px 0; font-weight: 600;
 }
-.prompt { color: #db2777; font-weight: bold; margin-right: 10px; }
+.prompt { color: #db2777; margin-right: 10px; }
+
 .subtitle {
-    font-size: 1.1rem; color: #94a3b8; max-width: 500px;
+    font-size: 1.1rem; color: #94a3b8; max-width: 480px;
     line-height: 1.6; margin-bottom: 35px;
 }
 .tech-highlight { color: #fff; font-weight: 600; }
 
-/* Buttons & Social */
+/* Buttons */
 .action-buttons { display: flex; gap: 15px; margin-bottom: 40px; }
 .main-button {
-    padding: 14px 30px; border-radius: 8px; font-weight: 600;
+    padding: 14px 30px; border-radius: 50px; font-weight: 600;
     text-decoration: none; transition: 0.3s; display: flex; align-items: center; gap: 8px;
 }
 .primary { background: white; color: black; }
 .secondary { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.1); }
-.main-button:hover { transform: translateY(-3px); }
+.main-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-.social-mini-row { display: flex; gap: 20px; font-size: 1.4rem; }
+.social-mini-row { display: flex; gap: 20px; font-size: 1.5rem; }
 .social-mini-row a { color: #64748b; transition: 0.3s; }
-.social-mini-row a:hover { color: #60a5fa; }
+.social-mini-row a:hover { color: #60a5fa; transform: scale(1.1); }
+
+/* RIGHT SIDE: Image & Bubbles */
+.hero-image { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+}
+
+.image-wrapper { position: relative; width: 400px; height: 400px; }
+
+.image-frame {
+    width: 350px; height: 350px;
+    border-radius: 50%; /* Circle shape like reference */
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 50px rgba(96, 165, 250, 0.2); /* Blue glow */
+    margin: 25px; /* Center inside wrapper */
+    position: relative; z-index: 1;
+}
+.profile-pic { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- 5 Floating Tech Bubbles --- */
+.tech-bubble {
+    position: absolute;
+    width: 55px; height: 55px;
+    background: rgba(20, 20, 25, 0.9);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    z-index: 2;
+    animation: floatIcon 6s infinite ease-in-out;
+}
+
+/* 1. Nuke (Yellow) - Top Left */
+.bubble-1 { 
+    top: -10px; left: 20px; 
+    border-color: #facc15; color: #facc15; 
+    animation-delay: 0s; 
+} 
+
+/* 2. Maya (Teal) - Top Right */
+.bubble-2 { 
+    top: 30px; right: -10px; 
+    border-color: #2dd4bf; color: #2dd4bf; 
+    animation-delay: 1s; 
+} 
+
+/* 3. Houdini (Orange) - Right Middle */
+.bubble-3 { 
+    bottom: 120px; right: -25px; 
+    border-color: #fb923c; color: #fb923c; 
+    animation-delay: 2s; 
+} 
+
+/* 4. Photoshop (Blue) - Bottom Right (NEW) */
+.bubble-4 { 
+    bottom: 10px; right: 20px; 
+    border-color: #3b82f6; color: #3b82f6; 
+    animation-delay: 3s; 
+} 
+
+/* 5. After Effects (Purple) - Bottom Left (NEW) */
+.bubble-5 { 
+    bottom: 20px; left: -10px; 
+    border-color: #a855f7; color: #a855f7; 
+    animation-delay: 4s; 
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
 
 /* --- 4. Responsive (Mobile) --- */
 @media (max-width: 900px) {
     .hero-container {
-        flex-direction: column-reverse; /* Stack Image on top, Text below on mobile */
+        flex-direction: column-reverse; /* Image Top, Text Bottom */
         text-align: center;
-        padding-top: 100px; /* Space for navbar */
+        padding-top: 100px; gap: 40px;
     }
     .hero-text { text-align: center; }
     .action-buttons { justify-content: center; }
     .social-mini-row { justify-content: center; }
-    .image-frame { width: 200px; height: 200px; margin-bottom: 30px; }
-    .greeting { font-size: 3rem; }
+    .image-wrapper { width: 280px; height: 280px; margin-bottom: 20px; }
+    .image-frame { width: 240px; height: 240px; }
+    .greeting { font-size: 3.5rem; }
 }
 
-/* --- 5. Splash Screen (No Changes needed here, it works) --- */
+/* --- 5. Splash Screen --- */
 .splash-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
     background-color: #050505; display: flex; justify-content: center; align-items: center;
